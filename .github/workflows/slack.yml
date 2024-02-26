@@ -27,7 +27,7 @@ jobs:
               "text": "Git push done in the repo. Maven project built successfully."
             }
         env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_SECRET }}
  
       - name: Send notification on Slack using Webhooks - Failure
         if: ${{ failure() }}
@@ -38,4 +38,4 @@ jobs:
               "text": "Git push done in the repo. Maven build failed. Please check the build logs for details."
             }
         env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_SECRET }}
