@@ -1,0 +1,14 @@
+name: Slack Notification
+
+on: [push]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post build status to Slack
+        uses: slack/webhook-action@v2
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_SECRET }}
+        with:
+          payload: '{"text": "Build status: ${{ job.status }}"}'
