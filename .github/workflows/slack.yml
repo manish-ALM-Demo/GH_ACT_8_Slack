@@ -11,4 +11,4 @@ jobs:
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_SECRET }}
         with:
-          payload: '{"text": "Build status: ${{ job.status }}"}'
+            text: "Build status: ${{ job.status }}"
